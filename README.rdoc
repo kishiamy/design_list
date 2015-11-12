@@ -1,0 +1,33 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+ruby 2.2.3p173
+
+* System dependencies
+none
+* Configuration
+cp config/secrets.yml.example config/secrets.yml
+
+Replace api_url and api_token to the correct ones
+
+* Database creation
+none
+
+* Database initialization
+none
+
+* How to run the test suite
+rspec
+
+* Services (job queues, cache servers, search engines, etc.)
+none
+
+* Deployment instructions
+Set environment variables
+  URL   : Url from API to connect
+  TOKEN : Access token to connect throught API

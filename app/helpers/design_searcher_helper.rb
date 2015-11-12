@@ -1,0 +1,2 @@
+module DesignSearcherHelper
+end

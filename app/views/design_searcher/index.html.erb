@@ -1,0 +1,25 @@
+<h1>Search designs</h1>
+
+<%= form_for('search', url: root_path, method: "get",
+             html: { class:'form-inline search-form' }) do |f| %>
+  <div class="form-group">
+    <%= f.label(:q, "Search for:") %>
+    <%= f.text_field(:q, class: 'form-control') %>
+    <%= f.text_field(:color1, class:'color-picker') %>
+    <%= f.text_field(:color2, class:'color-picker') %>
+    <%= f.text_field(:color3, class:'color-picker') %>
+    <%= f.text_field(:color4, class:'color-picker') %>
+    <%= f.select(:sort, ['classic', 'freshtastic', 'relevant'],
+                 {}, class: 'form-control') %>
+  </div>
+  <%= f.submit("Search", class: 'btn btn-primary') %>
+<% end %>
+
+<% @images.response['results'].first['results'].each do |k,v| %>
+  <div class='thumbnail'>
+    <%=image_tag k['thumbnail_url'], class: 'img-thumbnail' %>
+    <p class='name caption'>
+      <%= k['name'] %>
+    </p>
+  </div>
+<% end %>
